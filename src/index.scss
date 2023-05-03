@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    background: radial-gradient(circle at 24.1% 68.8%, rgb(22, 22, 22) 0%, rgb(0, 0, 0) 99.4%);
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    color: #efefef;
+}
+h1 {
+    font-size: 30px;
+
+    margin-bottom: 50px;
+}
+h1 span {
+    font-size: 25px;
+    opacity: 0.6;
+    font-weight: 300;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.btn {
+    font-family: inherit;
+    width: 100%;
+    background-color: transparent;
+    color: #eeeeee;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1px solid rgba(256, 256, 256, 0.2);
+    padding: 10px 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: rgba(256, 256, 256, 0.05);
+}
+.btn:active {
+    background-color: rgba(256, 256, 256, 0.07);
+}
+
+.container {
+    width: 100%;
+    max-width: 1199px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 30px 50px 30px 300px;
+    padding-top: 50px;
+}
+
+
+
+
+.chat {
+    flex: 1 1 auto;
+}
+
+.input-field {
+    display: flex;
+    height: 40px;
+}
+.query-input {
+    width: 50vw;
+    border-radius: 10px;
+    padding: 0 15px;
+    background: transparent;
+    border: 1px solid rgba(256, 256, 256, 0.2);
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: #eeeeee;
+    height: 40px;
+}
+.query-input:focus {
+    outline: 1px solid rgba(256, 256, 256, 0.4);
+}
+.query-btn {
+    width: 100px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-left: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat {
+    overflow-y: scroll;
+    height: 72vh;
+    padding-bottom: 40px;
+}
+.chat::-webkit-scrollbar {
+    display: none;
+}
+ul.chat {
+    list-style: none;
+    width: calc(100vw - 432px);
+}
+ul.chat .message-item.user {
+    background: rgba(256, 256, 256, 0.05);
+}
+ul.chat .message-item {
+    padding: 20px 30px;
+    border-radius: 10px;
+    display: flex;
+    column-gap: 20px;
+}
+.message-role {
+    display: block;
+    min-width: 40px;
+    height: 40px;
+    background: #2431a8;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul.chat .message-item.assistant .message-role {
+    background: #1a1a1a;
+}
+.message-item p.message-role {
+    font-weight: 300;
+}
+.message-item p.message-text {
+    font-weight: 300;
+    line-height: 1.5;
+}
+.message-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/**
+ * ==============================================
+ * Dot Elastic
+ * ==============================================
+ */
+$loader-line-width: 6px;
+$loader-line-height: 7px;
+.dot-elastic {
+    position: relative;
+    width: $loader-line-width;
+    height: $loader-line-height;
+    border-radius: 5px;
+    background-color: #e0e2ff;
+    animation: dot-elastic 1s infinite linear;
+}
+.dot-elastic::before, .dot-elastic::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+.dot-elastic::before {
+    left: -15px;
+    width: $loader-line-width;
+    height: $loader-line-height;
+    border-radius: 5px;
+    background-color: #e0e2ff;
+    animation: dot-elastic-before 1s infinite linear;
+}
+.dot-elastic::after {
+    left: 15px;
+    width: $loader-line-width;
+    height: $loader-line-height;
+    border-radius: 5px;
+    background-color: #e0e2ff;
+    animation: dot-elastic-after 1s infinite linear;
+}
+
+@keyframes dot-elastic-before {
+    0% {
+        transform: scale(1, 1);
+    }
+    25% {
+        transform: scale(1, 1.5);
+    }
+    50% {
+        transform: scale(1, 0.67);
+    }
+    75% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+@keyframes dot-elastic {
+    0% {
+        transform: scale(1, 1);
+    }
+    25% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1, 1.5);
+    }
+    75% {
+        transform: scale(1, 1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+@keyframes dot-elastic-after {
+    0% {
+        transform: scale(1, 1);
+    }
+    25% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1, 0.67);
+    }
+    75% {
+        transform: scale(1, 1.5);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
