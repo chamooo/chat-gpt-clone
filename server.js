@@ -1,17 +1,17 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
-// dotenv.config();
-
-// eslint-disable-next-line no-undef
-const API_KEY = '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';
-const PORT = 8000;
+dotenv.config();
 
 const app = express();
 
+const PORT = process.env.VITE_PORT;
+const API_KEY = process.env.VITE_API_KEY;
+
 app.use(express.json());
 app.use(cors());
+
 
 app.listen(PORT, () => console.log(`Your server is running on port ${PORT}`));
 
