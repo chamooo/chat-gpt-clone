@@ -52,6 +52,7 @@ const App: React.FC = () => {
             const data = await response.json();
             setMessage(data.choices[0].message);
         } catch (error) {
+            console.log(error)
             alert(error);
         } finally {
             setIsLoading(false);

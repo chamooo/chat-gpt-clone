@@ -2,10 +2,10 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv'
 
-dotenv.config();
+// dotenv.config();
 
 // eslint-disable-next-line no-undef
-const API_KEY = process.env.API_KEY;
+const API_KEY = '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';
 const PORT = 8000;
 
 const app = express();
